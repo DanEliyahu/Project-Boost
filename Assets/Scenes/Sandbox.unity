@@ -393,6 +393,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2003232317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2159826222364891451, guid: 8b12f7c94258785fe8cb1bb3cb4b9c92, type: 3}
+  m_PrefabInstance: {fileID: 1806265112129798309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &2003232318
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003232317}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.13452911
+  m_Height: 0.88406014
+  m_Direction: 1
+  m_Center: {x: 0.006625414, y: 0.09781289, z: 0.0014933613}
 --- !u!1001 &143833027932131004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -509,11 +528,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1941960619479418270, guid: 8b12f7c94258785fe8cb1bb3cb4b9c92, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3689921
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941960619479418270, guid: 8b12f7c94258785fe8cb1bb3cb4b9c92, type: 3}
+      propertyPath: m_Center.x
+      value: 0.00003325939
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941960619479418270, guid: 8b12f7c94258785fe8cb1bb3cb4b9c92, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8615416
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941960619479418270, guid: 8b12f7c94258785fe8cb1bb3cb4b9c92, type: 3}
+      propertyPath: m_Center.y
+      value: 0.10690826
+      objectReference: {fileID: 0}
     - target: {fileID: 2159826222364891451, guid: 8b12f7c94258785fe8cb1bb3cb4b9c92, type: 3}
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1941960619479418270, guid: 8b12f7c94258785fe8cb1bb3cb4b9c92, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8b12f7c94258785fe8cb1bb3cb4b9c92, type: 3}
 --- !u!1001 &4462614976120853110
 PrefabInstance:
