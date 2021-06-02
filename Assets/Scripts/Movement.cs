@@ -5,6 +5,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float thrust = 10f;
     [SerializeField] private float torque = 10f;
     [SerializeField] private AudioClip thrustSfx;
+    [SerializeField] private ParticleSystem jetParticles;
     private Rigidbody _rigidbody;
     private AudioSource _audioSource;
 
@@ -30,10 +31,16 @@ public class Movement : MonoBehaviour
             {
                 _audioSource.PlayOneShot(thrustSfx);
             }
+
+            if (!jetParticles.isPlaying)
+            {
+                jetParticles.Play();
+            }
         }
         else
         {
             _audioSource.Stop();
+            jetParticles.Stop();
         }
     }
 
@@ -41,11 +48,11 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            _rigidbody.AddRelativeTorque(Vector3.forward * torque,ForceMode.Impulse);
+            _rigidbody.AddRelativeTorque(Vector3.forward * torque, ForceMode.Impulse);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            _rigidbody.AddRelativeTorque(Vector3.back * torque,ForceMode.Impulse);
+            _rigidbody.AddRelativeTorque(Vector3.back * torque, ForceMode.Impulse);
         }
     }
 }
