@@ -55,4 +55,9 @@ public class Movement : MonoBehaviour
             _rigidbody.AddRelativeTorque(Vector3.back * torque, ForceMode.Impulse);
         }
     }
+
+    public void StopJetParticles()
+    {
+        jetParticles.Stop();
+    }
 }

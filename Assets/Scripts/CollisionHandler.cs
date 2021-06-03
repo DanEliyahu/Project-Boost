@@ -11,15 +11,28 @@ public class CollisionHandler : MonoBehaviour
 
     private AudioSource _audioSource;
     private bool _isTransitioning = false;
+    private bool _isDebug = false;
 
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            _isDebug = !_isDebug;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+    }
     private void OnCollisionEnter(Collision other)
     {
-        if (_isTransitioning)
+        if (_isTransitioning || _isDebug)
         {
             return;
         }
@@ -40,7 +53,9 @@ public class CollisionHandler : MonoBehaviour
     private void StartCrashSequence()
     {
         _isTransitioning = true;
-        GetComponent<Movement>().enabled = false;
+        var movementScript = GetComponent<Movement>();
+        movementScript.StopJetParticles();
+        movementScript.enabled = false;
         _audioSource.Stop();
         _audioSource.PlayOneShot(crashSfx);
         crashParticles.Play();
@@ -50,7 +65,9 @@ public class CollisionHandler : MonoBehaviour
     private void StartSuccessSequence()
     {
         _isTransitioning = true;
-        GetComponent<Movement>().enabled = false;
+        var movementScript = GetComponent<Movement>();
+        movementScript.StopJetParticles();
+        movementScript.enabled = false;
         _audioSource.Stop();
         _audioSource.PlayOneShot(successSfx);
         successParticles.Play();
